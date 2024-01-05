@@ -1,0 +1,38 @@
+
+button.auth-btn {
+    width: 21%;
+    height: 49px;
+    background-color: #fd8f5e;
+    border: 0px;
+    color: white;
+    font-weight: 400;
+    font-size: 17px;
+}
+
+button.discover-btn {
+    background-color: #fd8f5e;
+    color: white;
+    width: 55%;
+    height: 58px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 700;
+    border: 0
+}
+
+button.discover-btn1 {
+    border: 1px solid #fd8f5e;
+    color: #fd8f5e;
+    background-color: #ffffff;
+    width: 270px;
+    height: 71px;
+    display: block;
+    transition: all .3s;
+}
+
+button.discover-btn1:hover {
+    background-color: #fd8f5e;
+    color: white;
+}

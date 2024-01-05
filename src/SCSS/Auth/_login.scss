@@ -1,0 +1,30 @@
+div.form main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../../Assets/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+form.login-form {
+    width: 57%;
+    background-color: white;
+    min-height: 85vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    
+    input{
+       height: 62px;
+       border-radius: 0px;
+       padding: 25px;
+    }
+    
+    a{
+       font-size: 13px;
+       font-weight: 600;
+       text-decoration: none;
+       color: #fd8f5e;
+       height: fit-content;
+    }
+}

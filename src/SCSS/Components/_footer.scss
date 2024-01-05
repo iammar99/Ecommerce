@@ -1,0 +1,84 @@
+// -------- Upper Footer --------
+
+footer.upper-footer {
+    min-height: 350px;
+    background-color: rgb(242, 225, 217);
+    width: 97%;
+}
+
+.upper-footer p {
+    color: #57667e;
+}
+
+// -------- Lower Footer --------
+
+footer.lower-footer {
+    background-color: #1D2547;
+    min-height: 400px;
+    border-left: 32px solid #f2e1d9;
+    color: white;
+    padding: 90px 0px 0px 0px;
+}
+
+footer li {
+    list-style: none;
+    color: #C2C5DB;
+    transition: all .5s ease-in-out;
+}
+
+footer li:hover {
+    text-decoration: underline;
+    color: #fd8f5e;
+    cursor: pointer;
+}
+
+footer.lower-footer p {
+    margin: 32px 0px;
+    color: #C2C5DB;
+}
+
+.brand-icons {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    border: 1px solid white;
+    margin: 0% 3%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: all .3s ease-in-out;
+}
+
+.brand-icons:hover {
+    background-color: #d77e59;
+    border: 0;
+    // .brand-icons i{
+    //     display: none;
+    // }
+}
+
+
+.brand-icons i{
+    transition: all .3s ease-in-out;
+}
+
+
+.brand-icons:hover .brand-icons i {
+//    transform: rotateY(180deg);
+   display: none;
+}
+
+
+.brand-icons:hover .brand-icons i {
+//    transform: rotateY(180deg);
+   display: none;
+}
+
+
+.brand-icons:hover .brand-icons i {
+//    transform: rotateY(180deg);
+   display: none; 
+}
+
+

@@ -1,0 +1,28 @@
+// --------- Bootstrap ---------
+@import "~bootstrap/scss/bootstrap.scss";
+// // --------- Component ---------
+@import "./SCSS/Components/screenLoader";
+@import "./SCSS/Components/topNav";
+@import "./SCSS/Components/button";
+@import "./SCSS/Components/footer";
+@import "./SCSS/Components/rangeSlider";
+// // --------- Frontend ---------
+@import "./SCSS/Frontend/home";
+@import "./SCSS/Frontend/product";
+@import "./SCSS/Frontend/categories";
+// --------- Dashboard ---------
+@import "./SCSS/Dashboard/profile";
+@import "./SCSS/Dashboard/cart";
+// --------- Mediaqueries ---------
+@import "./SCSS/Components/mediaqueries";
+
+
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    flex: 1 0 auto;
+}

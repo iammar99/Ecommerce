@@ -1,0 +1,76 @@
+select#furniture {
+    width: 30%;
+    height: 38px;
+    text-align: center;
+    font-size: large;
+}
+
+li{
+    list-style: none;
+}
+
+select{
+    width: 100%;
+    height: 40px;
+    margin: 10px;
+    color: grey;
+    outline: 0px;
+    border: 0;
+}
+
+
+//   checkbox
+
+input[type="range"] {
+    appearance: none;
+}
+
+input.check {
+    height: 20px;
+    width: 20px;
+    margin: 2% 12%;
+    accent-color: #fd8f5e;
+    mix-blend-mode: multiply;
+}
+  
+.checkbox{
+    .span {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+        width: 100%;
+        font-size: 20px;
+    }
+}
+
+// box shadow for all continers
+
+.checkbox-container , .range-container , .filter{
+    margin: 10% 0%;
+    border-radius: 5%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.filter {
+    width: 100%;
+    padding: 20px 30px 20px 20px;
+}
+.checkbox-container {
+    min-height: 330px;
+    padding: 37px 13px;
+}
+
+// col allign
+
+.first-col {
+    display: inline;
+    width: 25%;
+}
+.second-col{
+    display: inline;
+    width: 75%;
+}
+
+.row.d-flex{
+    display: flex;
+    flex-direction: row;
+}

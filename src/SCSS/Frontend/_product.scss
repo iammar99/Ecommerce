@@ -1,0 +1,192 @@
+// Product - details
+
+.img-card {
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    border: 0;
+}
+
+.img-carusal {
+    display: flex;
+    position: relative;
+    left: 4%;
+    transition: all 1s ease-in-out;
+}
+
+span#output-area {
+    width: 70px;
+    display: inline-block;
+    font-size: 23px;
+    text-align: center;
+}
+
+.quantity-button {
+    border: 1px solid;
+    width: 196px;
+    padding: 0px 10px;
+    height: 57px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 500px;
+
+    button {
+        background-color: transparent;
+    }
+}
+
+.minus-btn {
+    border: 0;
+    border-right: 1px solid;
+}
+
+.plus-btn {
+    border: 0;
+    border-left: 1px solid;
+}
+
+// -----Heart ------------
+
+span.heart {
+    width: 50px;
+    height: 50px;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fd8f5e;
+    border-radius: 50%;
+    margin-left: 11%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+span.heart:hover {
+    background-color: #fd8f5e;
+    color: white;
+}
+
+.facebook,
+.twitter,
+.linkedin {
+    width: 50px;
+    height: 50px;
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 50%;
+    margin-left: 11%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.linkedin {
+    background-color: #0077b5;
+}
+
+.facebook {
+    background-color: #3b5998;
+}
+
+
+.twitter {
+    background-color: #55acee;
+}
+
+.facebook:hover,
+.twitter:hover,
+.linkedin:hover {
+    background-color: #fd8f5e;
+    color: white;
+}
+
+nav.detail-navbar {
+    ul {
+        width: 50%;
+
+        li.active {
+            background-color: #fd8f5e;
+            width: 98px;
+            height: 48px;
+            border-radius: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: 600;
+            padding: 0px 63px;
+        }
+
+        li {
+            background-color: #ffffff;
+            width: 98px;
+            height: 48px;
+            border-radius: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(0, 0, 0);
+            transition: all 0.5s ease-in-out;
+            cursor: pointer;
+        }
+    }
+}
+
+button.reply-btn {
+    width: 20%;
+    border-radius: 500px;
+    height: 45px;
+    border: 1px solid rgb(224, 224, 224);
+    transition: all 0.5s ease-in-out;
+}
+
+button.reply-btn:hover{
+    background-color: #fd8f5e;
+    color: white;
+    border: 0;
+}
+
+// Rating UI Verse 
+
+.rating {
+    display: inline-block;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    float: right;
+    cursor: pointer;
+    color: #ccc;
+    transition: color 0.3s;
+}
+
+.rating label:before {
+    content: '\2605';
+    font-size: 30px;
+} 
+
+.rating input:checked~label,
+.rating label:hover,
+.rating label:hover~label {
+    color: #fbd600;
+    transition: color 0.3s;
+}
+
+// Container Controll
+
+.description-container , .specification-container , .comments-container{
+    display: none;
+}
+
+// Product 
+

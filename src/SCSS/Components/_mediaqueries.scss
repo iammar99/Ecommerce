@@ -1,0 +1,152 @@
+// Auth Responsivesness
+@media screen and (max-width:990px) {
+
+    form.reset-form,
+    form.register-form,
+    form.login-form,
+    form.forgot-form {
+        width: 80%
+    }
+}
+
+
+@media screen and (max-width:600px) {
+
+    form.reset-form,
+    form.register-form,
+    form.login-form,
+    form.forgot-form {
+        width: 100%
+    }
+}
+
+// TOP NAVBAR responsiveness
+
+@media screen and (max-width:991px) {
+    form.search-form {
+        width: 39%;
+    }
+}
+
+
+
+@media screen and (max-width:851px) {
+    form.search-form {
+        width: 44%;
+    }
+}
+
+
+@media screen and (max-width:991px) {
+    .card {
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width:532px) {
+    .card {
+        left: 0;
+        position: absolute;
+        width: 90%;
+    }
+
+    h1.fw-bolder {
+        font-size: 46px;
+    }
+}
+
+
+
+// --------- Footer --------- 
+
+@media screen and (max-width:991px) {
+    footer.upper-footer {
+        width: 100%;
+    }
+
+    footer.lower-footer {
+        border: 0;
+    }
+}
+
+// --------- Product details ---------
+
+@media screen and (max-width:1200px) {
+    .slider__left-value {
+        font-size: 10px;
+        margin-right: 8%;
+    }
+
+    .slider__right-value {
+        font-size: 10px;
+        margin-left: 8%;
+    }
+}
+
+
+@media screen and (max-width:991px) {
+    .first-col {
+        display: inline;
+        width: 40%;
+    }
+
+    .second-col {
+        display: inline;
+        width: 60%;
+    img{
+        width: 200px !important;
+        height: 200px !important;
+    }
+    }
+}
+
+
+@media screen and (max-width:767px) {
+    .first-col {
+        display: inline;
+        width: 100%;
+    }
+
+    .second-col {
+        display: inline;
+        width: 100%;
+    }
+
+    .slider__left-value {
+        font-size: 10px;
+        margin-right: 36%;
+    }
+
+    .slider__right-value {
+        font-size: 10px;
+        margin-left: 36%;
+    }
+
+    .slider {
+        margin: 0% auto;
+    }
+
+    .thumb--left {
+        margin-left: 19%;
+    }
+
+    input.thumb.thumb--right {
+        margin-left: 20%;
+    }
+
+    .detail-img-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+// ------- Cart ----------
+
+@media screen and (max-width:771px) {
+    .first-cell{
+        display: flex;
+        flex-direction: column;
+    }
+}

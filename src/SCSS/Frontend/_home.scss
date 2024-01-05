@@ -1,0 +1,40 @@
+h1.first-heading.text-center {
+    font-size: 40px;
+    font-weight: 900;
+    margin-top: 8%;
+}
+
+a.nav-link{
+    color: black;
+}
+
+
+a.nav-link.active {
+    color: #fd8f5e;
+}
+
+b.price {
+    color: maroon;
+}
+
+p.mt-3:hover {
+    text-decoration: underline;
+}
+
+.insta-logo-2{
+    visibility: hidden;
+    transition: all .05s ease-in;
+}
+
+.insta-img{
+    transition: all .3s ease-in;
+}
+
+.insta-img:hover{
+    opacity: 0.7;
+}
+
+
+.insta-img:hover~.insta-logo-2{
+    visibility: visible;
+}
