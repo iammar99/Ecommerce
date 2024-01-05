@@ -1,3 +1,27 @@
+# Welcome
+welcome to repo . This repo contain an ecommerce project . 
+## Overview 
+It's an Ecommerce site of furniture . it consist of almost 13 , 14 pages .
+
+<b>
+Items Selling
+</b>
+<ul>
+<li>Sofa</li>
+<li>Table</li>
+<li>Decor</li>
+<li>Chair</li>
+<li>Bed</li>
+</ul>
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
