@@ -12,7 +12,39 @@ import img9 from "../../Assets/chair5.png"
 
 import MultiRangeSlider from "Components/MultiRangeSlider/MultiRangeSlider"
 
+const categories = ["All", "Chairs", "Tables", "Sofas"];
+const items = [
+  { id: 1, name: "Item 1", category: "Chairs" },
+  { id: 2, name: "Item 2", category: "Tables" },
+  { id: 3, name: "Item 3", category: "Sofas" }
+];
+
+
 export default function Categories() {
+  const [filter, setFilter] = useState("All");
+
+  const handleChange = (e) => {
+    setFilter(e.target.value);
+    const filteredItems = filter === "All" ? items : items.filter(item => item.category === filter);
+      if (filteredItems[0].name == "Item 1") {
+        // console.log("first")
+        let ChairsImg  =  document.getElementsByName("chairs")
+        for(let i = 0 ; i < ChairsImg.length ; i++){
+          ChairsImg[i].style.display="none";
+        }
+          console.log("Done")
+      }
+      else if (filteredItems[0].name == "Item 2") {
+        document.getElementById("sofa").style.display = "none"
+        console.log("second")
+      }
+      else if (filteredItems[0].name == "Item 3") {
+        // console.log("third")
+      }
+      else {
+        // console.log("all")
+      }
+  }
 
   return (
     <>
@@ -38,12 +70,12 @@ export default function Categories() {
                 </span>
                 <ul className='mt-5'>
                   <li>
-                    <select name="Type" id="Type">
-                      <option value="Type">Type</option>
-                      <option value="Chair">Chair</option>
-                      <option value="Table">Table</option>
-                      <option value="Bed">Bed</option>
-                      <option value="Light">Light</option>
+                    <select value={filter} onChange={handleChange}>
+                      {categories.map(category => (
+                        <option key={category} value={category}>
+                          {category}
+                        </option>
+                      ))}
                     </select>
                   </li>
                   <li>
@@ -58,10 +90,10 @@ export default function Categories() {
                   <li>
                     <select name="Color" id="Color">
                       <option value="Color">Color</option>
-                      <option value="Chair">Chair</option>
-                      <option value="Table">Table</option>
-                      <option value="Bed">Bed</option>
-                      <option value="Light">Light</option>
+                      <option value="Chair">Black</option>
+                      <option value="Table">Red</option>
+                      <option value="Bed">White</option>
+                      <option value="Light">brown</option>
                     </select>
                   </li>
                   <li>
@@ -125,7 +157,7 @@ export default function Categories() {
               <div className="container">
                 <div className="row">
                   <div className="col-lg-4 col-md-6 text-center">
-                    <img src={img1} alt="" className="d-block mx-sm-auto" style={{ "width": "300px" ,"height":"300px" }} />
+                    <img src={img1} alt="" id='sofa' className="d-block mx-sm-auto" style={{ "width": "300px", "height": "300px" }} />
                     <p className='mt-3'>
                       Bly Microfiber / Microsuede 56" Armless Loveseat
                     </p>
@@ -134,7 +166,7 @@ export default function Categories() {
                     </b>
                   </div>
                   <div className="col-lg-4 col-md-6 text-center">
-                    <img src={img2} alt="" className="d-block mx-sm-auto" style={{ "width": "300px" ,"height":"300px" }} />
+                    <img src={img2} alt="" id='' className="d-block mx-sm-auto" style={{ "width": "300px", "height": "300px" }} />
                     <p className='mt-3'>
                       Bly Microfiber / Microsuede 56" Armless Loveseat
                     </p>
@@ -143,7 +175,7 @@ export default function Categories() {
                     </b>
                   </div>
                   <div className="col-lg-4 col-md-6 text-center">
-                    <img src={img3} alt="" className="d-block mx-sm-auto" style={{ "width": "300px" ,"height":"300px" }} />
+                    <img src={img3} alt="" id='' className="d-block mx-sm-auto" style={{ "width": "300px", "height": "300px" }} />
                     <p className='mt-3'>
                       Bly Microfiber / Microsuede 56" Armless Loveseat
                     </p>
@@ -152,7 +184,7 @@ export default function Categories() {
                     </b>
                   </div>
                   <div className="col-lg-4 col-md-6 text-center">
-                    <img src={img4} alt="" className="d-block mx-sm-auto" style={{ "width": "300px" ,"height":"300px" }} />
+                    <img src={img4} alt="" id='' className="d-block mx-sm-auto" style={{ "width": "300px", "height": "300px" }} />
                     <p className='mt-3'>
                       Bly Microfiber / Microsuede 56" Armless Loveseat
                     </p>
@@ -161,7 +193,7 @@ export default function Categories() {
                     </b>
                   </div>
                   <div className="col-lg-4 col-md-6 text-center">
-                    <img src={img5} alt="" className="d-block mx-sm-auto" style={{ "width": "300px" ,"height":"300px" }} />
+                    <img src={img5} alt="" name="chairs" className="d-block mx-sm-auto" style={{ "width": "300px", "height": "300px" }} />
                     <p className='mt-3'>
                       Bly Microfiber / Microsuede 56" Armless Loveseat
                     </p>
@@ -170,7 +202,7 @@ export default function Categories() {
                     </b>
                   </div>
                   <div className="col-lg-4 col-md-6 text-center">
-                    <img src={img6} alt="" className="d-block mx-sm-auto" style={{ "width": "300px" ,"height":"300px" }} />
+                    <img src={img6} alt="" name="chairs" className="d-block mx-sm-auto" style={{ "width": "300px", "height": "300px" }} />
                     <p className='mt-3'>
                       Bly Microfiber / Microsuede 56" Armless Loveseat
                     </p>
@@ -179,7 +211,7 @@ export default function Categories() {
                     </b>
                   </div>
                   <div className="col-lg-4 col-md-6 text-center">
-                    <img src={img7} alt="" className="d-block mx-sm-auto" style={{ "width": "300px" ,"height":"300px" }} />
+                    <img src={img7} alt="" name="chairs" className="d-block mx-sm-auto" style={{ "width": "300px", "height": "300px" }} />
                     <p className='mt-3'>
                       Bly Microfiber / Microsuede 56" Armless Loveseat
                     </p>
@@ -188,7 +220,7 @@ export default function Categories() {
                     </b>
                   </div>
                   <div className="col-lg-4 col-md-6 text-center">
-                    <img src={img8} alt="" className="d-block mx-sm-auto" style={{ "width": "300px" ,"height":"300px" }} />
+                    <img src={img8} alt="" name="chairs" className="d-block mx-sm-auto" style={{ "width": "300px", "height": "300px" }} />
                     <p className='mt-3'>
                       Bly Microfiber / Microsuede 56" Armless Loveseat
                     </p>
@@ -197,7 +229,7 @@ export default function Categories() {
                     </b>
                   </div>
                   <div className="col-lg-4 col-md-6 text-center">
-                    <img src={img9} alt="" className="d-block mx-sm-auto" style={{ "width": "300px" ,"height":"300px" }} />
+                    <img src={img9} alt="" name="chairs" className="d-block mx-sm-auto" style={{ "width": "300px", "height": "300px" }} />
                     <p className='mt-3'>
                       Bly Microfiber / Microsuede 56" Armless Loveseat
                     </p>

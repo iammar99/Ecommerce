@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from "../../Assets/logo2.png"
 import userImg from "../../Assets/user-img.png"
@@ -8,30 +8,34 @@ import { signOut } from 'firebase/auth'
 import { useAuthContext } from 'Context/AuthContext';
 
 export default function TopNav() {
-  const {dispatch } = useAuthContext()
-  const {isAuth} = useAuthContext()
+  const { dispatch } = useAuthContext()
+  const { isAuth } = useAuthContext()
 
-  // let user = JSON.parse(localStorage.getItem("user"))
-  // if (!user) {
-  //   let name = user.fullname
-  // }
+  let user = {}
+  if (isAuth) {
+    user = JSON.parse(localStorage.getItem("user"))
+  }
+  let name = user.fullname
+  let userName = "UserName"
+
   // let profileImg
 
   const handleFocus = () => {
     document.getElementById("account-drop-down").style.display = "block"
   }
 
-  const handleLogout = () => {
+  const handleLogout = (e) => {
+    e.preventDefault()
     signOut(auth)
       .then(() => {
         console.log('Loggoed Out')
         message.success("Loggoed Out")
-        localStorage.setItem("token","false")
-        localStorage.setItem("user",{})
-        dispatch({ type: "Set_Logged_Out", payload:{}})
-        
+        localStorage.setItem("token", "false")
+        localStorage.setItem("user", {})
+        dispatch({ type: "Set_Logged_Out", payload: {} })
+
       })
-      .catch((error) => { 
+      .catch((error) => {
         console.log('error', error)
         // ..
       });
@@ -88,40 +92,76 @@ export default function TopNav() {
                   <i className="fa-solid fa-magnifying-glass" />
                 </span>
               </div>
-              <Link className="nav-link my-account" onClick={handleFocus} style={{ "display": "flex", "alignItems": "center", "cursor": "pointer" }} >
-                My Account</Link>
+              <div className="theme-popup">
+                <input type="radio" name="theme" id="default" defaultChecked="" />
+                <input type="radio" name="theme" id="light" />
+                <input type="radio" name="theme" id="dark" />
+                <input type="checkbox" id="checkbox" />
+                <label htmlFor="checkbox" className="theme-popup__button">
+                  <span className="theme-popup__icons">
+                  </span>
+                  My Account
+                </label>
+                <div className="theme-popup__list-container">
+                  <ul className="theme-popup__list">
+                    <li>
+                      <span>
+                        <div className="profile">
+                          <img src={userImg} alt={userImg} className="profile-img" />
+                          <h5>
+                            {
+                              isAuth
+                                ?
+                                name
+                                :
+                                userName
+                            }
+                          </h5>
+                        </div>
+                      </span>
+                    </li>
+                    <li style={{ "display": "flex", "justifyContent": "flex-start", "alignItems": "center" }}>
+                      <Link to="/dashboard/profile"><i className="far fa-address-card"></i> &nbsp;&nbsp;Profile</Link>
+                    </li>
+                    <li>
+                      <Link to="/dashboard/cart">Cart</Link>
+                    </li>
+                    <li>
+                      <span>
+                        <Link to={"/terms"}>Terms And Conditions</Link>
+                        <hr style={{ "width": "70%", "margin": "12px auto" }} />
+                      </span>
+                    </li>
+                    <li>
+                      <span>
+                        {
+                          !isAuth
+                            ?
+                            <Link to={"/auth/"}>
+                              <button className="btn btn-success">LogIn</button>
+                            </Link>
+                            :
+                            <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+                        }
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* <Link className="nav-link my-account" onClick={handleFocus} style={{ "display": "flex", "alignItems": "center", "cursor": "pointer" }} >
+                My Account</Link> */}
               <b style={{ "display": "flex", "alignItems": "center" }}><i className="fa-solid fa-bucket"></i></b>
             </form>
           </div>
         </div>
       </nav>
-      <div className="account-drop-down" id='account-drop-down'>
-        <div className="profile">
-          <img src={userImg} alt={userImg} className="profile-img" />
-          <h5>
-            {
-              "UserName"
-            }
-          </h5>
-        </div>
+      {/* <div className="account-drop-down" id='account-drop-down'>
+
         <ul className='ps-2'>
-          <li>
-            <Link to="/dashboard/profile"><i className="far fa-address-card"></i> &nbsp;&nbsp;Profile</Link>
-          </li>
-          <li>
-            <Link to="/dashboard/cart">Cart</Link>
-          </li>
-          <li>
-            <Link to={"/terms"}>Terms And Conditions</Link>
-          </li>
-          <li>
-            <hr style={{ "width": "70%", "margin": "12px auto" }} />
-          </li>
-          <li>
-            <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
-          </li>
+
         </ul>
-      </div>
+      </div> */}
     </>
   )
 }

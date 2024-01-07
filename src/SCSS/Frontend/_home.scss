@@ -1,3 +1,7 @@
+.img-fluid{
+    transition: all 1s ease-in-out;
+}
+
 h1.first-heading.text-center {
     font-size: 40px;
     font-weight: 900;
@@ -6,7 +10,7 @@ h1.first-heading.text-center {
 
 a.nav-link{
     color: black;
-}
+} 
 
 
 a.nav-link.active {

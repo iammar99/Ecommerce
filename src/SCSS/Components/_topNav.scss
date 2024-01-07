@@ -241,30 +241,7 @@ input[type]:checked~span.middle {
 
 // ----- Account Dropdown ----------
 
-.account-drop-down {
-  background-color: white;
-  width: 238px;
-  height: 267px;
-  display: inline-block;
-  position: absolute;
-  right: 4%;
-  top: 12%;
-  border-radius: 20px;
-  display: none;
 
-  a {
-    text-decoration: none;
-    color: black;
-    font-size: large;
-    display: block;
-    margin: 9px 0px;
-  }
-
-  a:hover {
-    color: #fd8f5e;
-    transition: all .4s;
-  }
-}
 
 img.profile-img {
   width: 50px;
@@ -280,4 +257,139 @@ img.profile-img {
 
 ul {
   list-style: none;
+}
+
+
+// ----------- Account DropDown -----------
+
+// -------------- Main Button  -------------- 
+.theme-popup__button {
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  color: black;
+  outline: none;
+  font-weight: bold;
+  outline: 0;
+  transition: all .2s ease-in-out;
+}
+
+.theme-popup__button:hover{
+  color: #fd8f5e;
+}
+/* radio settings 👇 */
+
+.theme-popup {
+  /* total */
+  --total_text_color: #e0e0e0;
+  --total_font_family: 'Times New Roman', 'serif';
+  /* button */
+  --btn_bg: #3A3A3A;
+  --btn_padding: 0.5em;
+  --btn_height: 2em;
+  --btn_border_radius: 0.3125em;
+  --btn_outline_width: 0.0625em;
+  --btn_outline_color: #A0A0A0;
+  --btn_outline_offset: 0.0625em;
+  --btn_gap: 0.3125em;
+  /* list */
+  --list_padding: 0.5em;
+  --list_bg: var(--btn_bg);
+  --list_border_radius: var(--btn_border_radius);
+  --list_gap: 0.1875em;
+  --list_btn_hover_bg: #5A5656;
+  --list_btn_active: #b9b9b970;
+  --list_btn_border_radius: 0.25em;
+  --list_btn_padding: 0.35em 1em;
+  --list_btn_gap: 0.4375em;
+  --list_btn_outline_width: 0.0625em;
+  --list_btn_outline_color: rgb(212, 210, 210);
+  --list_offset: 0.35em;
+  --list_btn_font_size: 14px;
+  --list_position_left: 0;
+  --list_position_right: unset;
+  /* 👆 if you want to change sides just switch one property */
+  /* from properties to "unset" and the other to 0 */
+}
+
+.theme-popup__button .theme-popup__icons svg,
+#light,
+#dark, 
+#default, 
+#checkbox,
+.theme-popup__list-container {
+  display: none;
+}
+
+.theme-popup {
+  color: var(--total_text_color);
+  font-family: var(--total_font_family);
+  position: relative;
+  user-select: none;
+}
+
+.theme-popup__list-container {
+  position: absolute;
+  left: var(--list_position_left);
+  right: var(--list_position_right);
+  top: calc(var(--btn_height) + var(--list_offset));
+}
+
+.theme-popup__list {
+  position: fixed;
+  right: 3%;
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+  list-style-type: none;
+  border-radius: var(--list_border_radius);
+  display: flex;
+  flex-direction: column;
+  row-gap: var(--list_gap);
+  padding: 15px 20px;
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: large;
+    display: block;
+    margin: 9px 0px;
+  }
+
+  a:hover {
+    color: #fd8f5e;
+    transition: all .4s;
+  }
+}
+
+.theme-popup__list label {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  column-gap: var(--list_btn_gap);
+  padding: var(--list_btn_padding);
+  border-radius: var(--list_btn_border_radius);
+  white-space: nowrap;
+}
+
+.theme-popup__list label span {
+  font-size: var(--list_btn_font_size);
+}
+
+/* actions */
+
+#checkbox:checked~.theme-popup__list-container {
+  display: block;
+}
+
+#default:checked~.theme-popup__list-container label[for="default"],
+#light:checked~.theme-popup__list-container label[for="light"],
+#dark:checked~.theme-popup__list-container label[for="dark"] {
+  background-color: var(--list_btn_active);
+  outline: var(--list_btn_outline_width) solid var(--list_btn_outline_color);
+}
+
+#default:checked~label svg.default,
+#light:checked~label svg.sun,
+#dark:checked~label svg.moon {
+  display: block;
 }
