@@ -66,14 +66,20 @@ export default function TopNav() {
               <div className="paste-button">
                 <button className="button nav-link">Page</button>
                 <div className="dropdown-content">
+                  {
+                    isAuth
+                      ?
+                      <></>
+                      :
+                      <Link className="nav-link" to={"/auth/"}>
+                        Login
+                      </Link>
+                  }
                   <Link className="nav-link" to="/dashboard/cart">
                     Cart
                   </Link>
                   <Link className="nav-link" to="/categories">
                     Category
-                  </Link>
-                  <Link className="nav-link" to="/dashboard/Checkout">
-                    Checkout
                   </Link>
                   <Link className="nav-link" to="/details">
                     Product Details

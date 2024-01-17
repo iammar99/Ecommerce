@@ -3,8 +3,12 @@ import { Link } from 'react-router-dom'
 import "../../SCSS/Auth/_register.scss"
 import { useState } from 'react'
 import { message } from 'antd';
+// --------- Auth ------------
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from 'Config/firebase';
+// ------------FireStore -----------
+import { doc, setDoc } from "firebase/firestore";
+import {fireStore} from "Config/firebase"
 import { useAuthContext } from 'Context/AuthContext';
 
 
@@ -30,6 +34,7 @@ export default function Register() {
         let activeUser = JSON.stringify(currentUser)
         localStorage.setItem("user",activeUser)
         dispatch({ type: "Set_Logged_In", payload: { currentUser } })
+        setDoc(doc(fireStore, "Users",user.uid) , { email, fullname, id: user.uid })
         message.success("USer Registered")
         // ...
       })
