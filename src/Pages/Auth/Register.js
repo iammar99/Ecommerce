@@ -22,7 +22,20 @@ export default function Register() {
     e.preventDefault()
     let { email, fullname, password, confirmPassword } = currentUser
     if (!email || !fullname || !password || !confirmPassword) {
-      message.error("Please fill all the fields")
+      Toastify({
+        text: "Please fill all the fields",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, red, brown)",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
     }
     // console.log('currentUser', currentUser)
     createUserWithEmailAndPassword(auth, email, fullname, password, confirmPassword)

@@ -20,7 +20,20 @@ export default function Login() {
     let { email, password } = currentUser
     e.preventDefault()
     if (!email || !password) {
-      message.error("Please Fill All The Fields")
+      Toastify({
+        text: "Please Fill All the Fields",
+        duration: 3000,
+        destination: "https://github.com/apvarun/toastify-js",
+        newWindow: true,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "left", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, red, brown)",
+        },
+        onClick: function(){} // Callback after click
+      }).showToast();
     }
     else {
 

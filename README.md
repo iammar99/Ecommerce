@@ -43,7 +43,7 @@ Furniture Emporium is an online platform dedicated to connecting buyers and sell
 </ul>
 
 ## Getting Started
-To get started with Furniture Emporium, simply visit our website at www.furnitureemporium.com. You can create an account to start shopping or selling your furniture items.
+To get started with Furniture Emporium, simply visit our website at [React Firebase Ecommerce App](https://furn-ammar.surge.sh) You can create an account to start shopping or selling your furniture items.
 
 ## How to Use
 <ol>
