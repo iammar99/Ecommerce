@@ -25,11 +25,11 @@ export default function AuthContextProvider({ children }) {
     useEffect(() => {
         const token = localStorage.getItem("token")
         const user = localStorage.getItem("user")
-        console.log(state)
+        // console.log(state)
         if (token === "true") {
             dispatch({ type: "Set_Logged_In", payload: { user } })
-            console.log('user', user)
-            console.log('token', token)
+            // console.log('user', user)
+            // console.log('token', token)
         }
         setTimeout(()=>{
             setIsAppLoading(true);

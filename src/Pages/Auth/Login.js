@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import "../../SCSS/Auth/_login.scss"
 import { useState } from 'react'
-import { message } from 'antd';
+import Toastify from 'toastify-js'
 import { auth } from 'Config/firebase'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { useAuthContext } from 'Context/AuthContext';
@@ -32,7 +32,20 @@ export default function Login() {
           const user = userCredential.user;
           // console.log('user', user)
           // console.log('userCredential', userCredential)
-          message.success("Logged In")
+          Toastify({
+            text: "Logged in",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, #77f600, #00cd3e)",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
           dispatch({ type: "Set_Logged_In", payload: { user } })
           localStorage.setItem("Token", "true")
           localStorage.setItem("User", JSON.stringify(user))
@@ -41,7 +54,20 @@ export default function Login() {
         })
         .catch((error) => { 
           // setIsProccessing(false)
-          message.error("Username or Password Invalid")
+          Toastify({
+            text: "Error Occured !! Try making another account",
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+              background: "linear-gradient(to right, red, brown)",
+            },
+            onClick: function(){} // Callback after click
+          }).showToast();
           console.log(email)
           console.log(password)
           // console.log('error', error)

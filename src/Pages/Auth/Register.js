@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import "../../SCSS/Auth/_register.scss"
 import { useState } from 'react'
-import { message } from 'antd';
+import Toastify from 'toastify-js'
 // --------- Auth ------------
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from 'Config/firebase';
@@ -29,17 +29,50 @@ export default function Register() {
       .then((userCredential) => {
         // Signed in 
         const user = userCredential.user;
-        console.log('user', user)
+        let userToStore =  {
+          id:user.uid ,
+          fullname ,
+          email
+        }
+        // currentUser = {...currentUser , id:user.uid}
+        // console.log('user', user)
         localStorage.setItem("token","true")
-        let activeUser = JSON.stringify(currentUser)
+        let activeUser = JSON.stringify(userToStore)
         localStorage.setItem("user",activeUser)
         dispatch({ type: "Set_Logged_In", payload: { currentUser } })
         setDoc(doc(fireStore, "Users",user.uid) , { email, fullname, id: user.uid })
-        message.success("USer Registered")
+        Toastify({
+          text: "User Registered",
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "left", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #77f600, #00cd3e)",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
         // ...
       })
       .catch((error) => {
         console.log('error', error)
+        Toastify({
+          text: "Error Occured",
+          duration: 3000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "left", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, red, brown)",
+          },
+          onClick: function(){} // Callback after click
+        }).showToast();
       });
   }
   return (

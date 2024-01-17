@@ -32,11 +32,11 @@ export default function Categories() {
         for(let i = 0 ; i < ChairsImg.length ; i++){
           ChairsImg[i].style.display="none";
         }
-          console.log("Done")
+          // console.log("Done")
       }
       else if (filteredItems[0].name == "Item 2") {
         document.getElementById("sofa").style.display = "none"
-        console.log("second")
+        // console.log("second")
       }
       else if (filteredItems[0].name == "Item 3") {
         // console.log("third")

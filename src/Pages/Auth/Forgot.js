@@ -15,7 +15,7 @@ export default function Forgot() {
     }
     else {
       const mail = email.email
-      console.log(mail)
+      // console.log(mail)
 
       sendPasswordResetEmail(auth, email)
         .then(() => {

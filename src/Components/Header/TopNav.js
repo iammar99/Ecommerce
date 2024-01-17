@@ -12,12 +12,20 @@ export default function TopNav() {
   const { isAuth } = useAuthContext()
 
   let user = {}
+  let profileImg
   if (isAuth) {
     user = JSON.parse(localStorage.getItem("user"))
+    profileImg = user.imageUrl
   }
   let name = user.fullname
   let userName = "UserName"
-
+  let photoUrl
+  if(profileImg){
+    photoUrl = user.imageUrl
+  }
+  else{
+     photoUrl = userImg
+  }
   // let profileImg
 
   const handleFocus = () => {
@@ -113,7 +121,7 @@ export default function TopNav() {
                     <li>
                       <span>
                         <div className="profile">
-                          <img src={userImg} alt={userImg} className="profile-img" />
+                          <img src={photoUrl} alt="profile" className="profile-img" />
                           <h5>
                             {
                               isAuth
